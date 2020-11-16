@@ -17,6 +17,12 @@ import java.util.HashMap;
 public class DemoFindSameNums {
 
 
+    /**
+     * Function: hashmap
+     *
+     * @param arry
+     * @return
+     */
     public int findSameNum(int[] arry) {
 
         if (arry == null) {
@@ -27,11 +33,52 @@ public class DemoFindSameNums {
 
         for (int i = 0, len = arry.length; i < len; i++) {
 
-            if(map.containsKey(arry[i])){
+            if (map.containsKey(arry[i])) {
                 return arry[i];
             }
 
             map.put(arry[i], i);
+        }
+
+        return -1;
+    }
+
+
+    public int findSameNum2(int[] arry) {
+
+        if (arry == null) {
+            return -1;
+        }
+
+        /**
+         * {2,3,1,0,2,5,3}
+         *
+         * i=0;
+         * 1,3,2,0,2,5,3
+         * 3,1,2,0,2,5,3
+         * 0,1,2,3,2,5,3
+         *
+         * i=1;
+         *
+         * i=2;
+         *
+         * i=3;
+         *
+         * i=4;
+         * a[4] = 2; a[2] = 2
+         *
+         */
+        for (int i = 0, len = arry.length; i < len; i++) {
+            while (i != arry[i]) {
+
+                if (arry[i] == arry[arry[i]]) {
+                    return arry[i];
+                }
+
+                int temp = arry[i];
+                arry[i] = arry[arry[i]];
+                arry[arry[i]] = temp;
+            }
         }
 
         return -1;
