@@ -4,31 +4,62 @@ import com.tiger.algorithm.Entity.ListNode;
 
 import java.util.Stack;
 
-/**
- * 题目描述
- * 给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。
- *
- * 返回删除后的链表的头节点。
- *
- * 注意：此题对比原题有改动
- *
- * 示例 1:
- *
- * 输入: head = [4,5,1,9], val = 5
- * 输出: [4,1,9]
- * 解释: 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -> 1 -> 9.
- * 示例 2:
- *
- * 输入: head = [4,5,1,9], val = 1
- * 输出: [4,5,9]
- * 解释: 给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -> 5 -> 9.
- * 说明：
- *
- * 题目保证链表中节点的值互不相同
- * 若使用 C 或 C++ 语言，你不需要 free 或 delete 被删除的节点
- */
+
 public class DemoReverseListNode {
 
+
+    /**
+     * 题目描述
+     * 反转一个单链表。
+     * <p>
+     * 示例:
+     * <p>
+     * 输入: 1->2->3->4->5->NULL
+     * 输出: 5->4->3->2->1->NULL
+     * 进阶:
+     * 你可以迭代或递归地反转链表。你能否用两种方法解决这道题？
+     * <p>
+     * 解法
+     * 定义指针 p、q 分别指向头节点和下一个节点，pre 指向头节点的前一个节点。
+     * <p>
+     * 遍历链表，改变指针 p 指向的节点的指向，将其指向 pre 指针指向的节点，即 p.next = pre。然后 pre 指针指向 p，p、q 指针往前走。
+     * <p>
+     * 当遍历结束后，返回 pre 指针即可。
+     *
+     * @param head
+     * @return
+     */
+    public ListNode reverlistNode(ListNode head) {
+
+        ListNode pre = null;
+        ListNode p = head;
+
+        while (p != null) {
+            ListNode q = p.next;
+            p.next = pre;
+            pre = p;
+            p = q;
+        }
+
+        return pre;
+
+    }
+
+    /**
+     * 题目描述
+     * 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
+     * <p>
+     * 示例 1：
+     * <p>
+     * 输入：head = [1,3,2]
+     * 输出：[2,3,1]
+     * 限制：
+     * <p>
+     * 0 <= 链表长度 <= 10000
+     *
+     * @param head
+     * @return
+     */
     public int[] reverseListNode(ListNode head) {
 
         Stack<Integer> s = new Stack<>();
