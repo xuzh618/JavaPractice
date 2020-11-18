@@ -45,6 +45,7 @@ captures/
 .idea/uiDesigner.xml
 .idea/encodings.xml
 .idea/misc.xml
+.idea/kotlinc.xml
 *.iml
 .idea/workspace.xml
 .idea/tasks.xml
