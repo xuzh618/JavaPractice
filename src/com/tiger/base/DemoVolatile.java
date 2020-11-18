@@ -1,5 +1,10 @@
 package com.tiger.base;
 
+/**
+ * Volatile 作用：
+ * 1. 保证多线程对变量的可见性
+ * 2. 禁止指令重排操作（JMM）
+ */
 public class DemoVolatile {
 
     public int a = 0;

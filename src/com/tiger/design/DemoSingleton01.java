@@ -2,7 +2,8 @@ package com.tiger.design;
 
 public class DemoSingleton01 {
 
-    private static DemoSingleton01 mInstance = null;
+    // volatile
+    private static volatile DemoSingleton01 mInstance = null;
 
     private DemoSingleton01() {
         //init
