@@ -1,4 +1,4 @@
-package com.tiger.algorithm.Entity;
+package com.tiger.algorithm.entity;
 
 public class TreeNode {
 

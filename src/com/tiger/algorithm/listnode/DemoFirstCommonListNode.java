@@ -1,6 +1,6 @@
-package com.tiger.algorithm;
+package com.tiger.algorithm.listnode;
 
-import com.tiger.algorithm.Entity.ListNode;
+import com.tiger.algorithm.entity.ListNode;
 
 import java.util.Stack;
 
