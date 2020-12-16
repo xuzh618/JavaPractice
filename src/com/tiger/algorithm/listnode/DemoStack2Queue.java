@@ -10,7 +10,7 @@ public class DemoStack2Queue {
 
 
     /***
-     *
+     *  参考：https://zhuanlan.zhihu.com/p/107761819
      * 重点在找到队首的元素，这样能保证output拿到最新入队的元素
      *
      * push-peek-pop（包含peek操作）
