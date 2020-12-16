@@ -1,4 +1,4 @@
-package com.tiger.algorithm;
+package com.tiger.algorithm.arrays;
 
 import java.util.HashMap;
 
@@ -83,6 +83,20 @@ public class DemoFindSameNums {
 
         return -1;
     }
+
+    /**
+     * 解题思路
+     * 从题目我们可以知道，数组长度为 n，所有数字都在 0~n-1 范围内。如果元素不重复，那么数组应该就是 [0, 1, 2, ...n-1]
+     * （假设给数组排完了序）。也就是说，递增排序后，数组中的元素值与其对应的下标应该是相同的，即下标为 0 的元素值也是 0，以此类推。
+     *
+     * 首先，我们可以遍历数组，若存在元素不在 0~n-1 的范围内，直接返回 -1。
+     *
+     * 接着，再次遍历数组，若下标 i 与对应元素 nums[i] 不同，即 nums[i] != i，我们应该把 nums[i] 这个元素交换到正确的位置nums[i]上。
+     * 交换前，先判断 nums[i] 与 nums[nums[i]] 这两个元素是否相同，相同说明存在重复元素，直接返回，否则进行 swap 交换。交换过后，
+     * 我们需要再次判断 i 位置上的元素.
+     *
+     *
+     */
 
 
 }

@@ -1,4 +1,4 @@
-package com.tiger.algorithm;
+package com.tiger.algorithm.sorts;
 
 
 public class DemoBaseSorts {
