@@ -18,7 +18,16 @@ import com.tiger.algorithm.entity.ListNode;
  * 输入：head = [3,2,0,-4], pos = 1
  * 输出：tail connects to node index 1
  * 解释：链表中有一个环，其尾部连接到第二个节点。
+ *              Z
+ *         08<-07<-06[NODE]
+ *         |        |
+ * 01->02->03->04->05
+ *   X       Y
  *
+ *   S = X+Y
+ *   2S = X+Y +(Y+Z)*N
+ *
+ *   X = (N-1)(Y+Z) + Z
  */
 public class DemoCircleList {
 
